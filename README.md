@@ -2,7 +2,7 @@
 Transformer based AI Bitcoin Private key predictor
 
 This code is a poof of concept !!
-It tries to predictthe btcoin private key for a inputed address.
+It tries to predict the bitcoin private key for a inputed address.
 
 the file "gen_data" will create the dataset.csv containing bitcoin addresses and the corresponding private keys.
 dataset content example:
