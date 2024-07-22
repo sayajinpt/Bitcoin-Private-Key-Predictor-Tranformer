@@ -49,7 +49,7 @@ def tokenize_data(data, targets):
 train_tokenized, train_targets = tokenize_data(train_inputs, train_targets)
 val_tokenized, val_targets = tokenize_data(val_inputs, val_targets)
 
-class CustomDataset(Dataset):
+class BTC_Dataset(Dataset):
     def __init__(self, inputs, targets):
         self.inputs = inputs
         self.targets = targets
@@ -116,8 +116,8 @@ model = TransformerModel(
     num_classes=NUM_CLASSES
 ).to(device)
 
-train_dataset = CustomDataset(train_tokenized, train_targets)
-val_dataset = CustomDataset(val_tokenized, val_targets)
+train_dataset = BTC_Dataset(train_tokenized, train_targets)
+val_dataset = BTC_Dataset(val_tokenized, val_targets)
 
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, collate_fn=collate_fn)
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, collate_fn=collate_fn)
